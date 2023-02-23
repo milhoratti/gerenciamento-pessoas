@@ -32,8 +32,7 @@ public class Pessoa {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Endereco> enderecos = new ArrayList<>();
 
-    @OneToOne
-    private Endereco enderecoPrincipal;
+    private Long enderecoPrincipalId;
 
     public Pessoa() {}
 
@@ -74,11 +73,11 @@ public class Pessoa {
         this.enderecos = enderecos;
     }
 
-    public Endereco getEnderecoPrincipal() {
-        return enderecoPrincipal;
+    public Long getEnderecoPrincipalId() {
+        return enderecoPrincipalId;
     }
 
-    public void setEnderecoPrincipal(Endereco enderecoPrincipal) {
-        this.enderecoPrincipal = enderecoPrincipal;
+    public void setEnderecoPrincipalId(Long enderecoPrincipalId) {
+        this.enderecoPrincipalId = enderecoPrincipalId;
     }
 }

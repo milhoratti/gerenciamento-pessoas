@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 public class Endereco {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,6 +32,8 @@ public class Endereco {
     @ManyToOne
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
+
+    private boolean enderecoPrincipal;
 
     public Endereco() {
     }
@@ -58,7 +61,7 @@ public class Endereco {
     public void setLogradouro(String logradouro) {
         this.logradouro = logradouro;
     }
-    
+
     public String getCep() {
         return cep;
     }
@@ -89,5 +92,13 @@ public class Endereco {
 
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
+    }
+
+    public boolean isEnderecoPrincipal() {
+        return enderecoPrincipal;
+    }
+
+    public void setEnderecoPrincipal(boolean enderecoPrincipal) {
+        this.enderecoPrincipal = enderecoPrincipal;
     }
 }
