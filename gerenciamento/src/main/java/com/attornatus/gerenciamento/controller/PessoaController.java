@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.attornatus.gerenciamento.model.Endereco;
@@ -69,9 +68,9 @@ public class PessoaController {
 		return ResponseEntity.ok(enderecos);
 	}
 
-	@PutMapping("/{id}/endereco-principal")
-	public ResponseEntity<Pessoa> definirEnderecoPrincipal(@PathVariable Long id, @RequestParam Long enderecoId) {
-		Pessoa pessoa = pessoaService.definirEnderecoPrincipal(id, enderecoId);
-		return ResponseEntity.ok(pessoa);
-	}
+	//@PutMapping("/{id}/endereco-principal")
+	//public ResponseEntity<Pessoa> definirEnderecoPrincipal(@PathVariable Long id, @RequestParam Long enderecoId) {
+	//	Pessoa pessoa = pessoaService.definirEnderecoPrincipal(id, enderecoId);
+	//	return ResponseEntity.ok(pessoa);
+	//}
 }

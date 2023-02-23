@@ -32,7 +32,8 @@ public class Endereco {
     @ManyToOne
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
-
+    
+    @NotNull
     private boolean enderecoPrincipal;
 
     public Endereco() {

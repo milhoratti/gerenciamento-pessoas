@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -29,10 +28,8 @@ public class Pessoa {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataNascimento;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Endereco> enderecos = new ArrayList<>();
-
-    private Long enderecoPrincipalId;
 
     public Pessoa() {}
 
@@ -73,11 +70,4 @@ public class Pessoa {
         this.enderecos = enderecos;
     }
 
-    public Long getEnderecoPrincipalId() {
-        return enderecoPrincipalId;
-    }
-
-    public void setEnderecoPrincipalId(Long enderecoPrincipalId) {
-        this.enderecoPrincipalId = enderecoPrincipalId;
-    }
 }
